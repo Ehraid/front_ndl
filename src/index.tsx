@@ -7,6 +7,7 @@ import {
 import './index.css';
 import AppPage from './pages/app/AppPage';
 import TemplatePage from './pages/template/TemplatePage';
+import CalendarPage from './pages/calendar/CalendarPage';
 
 
 const router = createBrowserRouter([
@@ -14,7 +15,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <AppPage />,
   },
-
+  {
+    path: "/calendar",
+    element: <CalendarPage />
+  },
 
   //if we are debuging
   (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ?
