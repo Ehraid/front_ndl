@@ -7,6 +7,7 @@ import {
 import './index.css';
 import AppPage from './pages/app/AppPage';
 import TemplatePage from './pages/template/TemplatePage';
+import Error404Page from './pages/error404/Error404Page';
 import CalendarPage from './pages/calendar/CalendarPage';
 
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     element: <AppPage />,
   },
   
+  {
+    path: "/*",
+    element: <Error404Page />
+  },
   {
     path: "/calendar",
     element: <CalendarPage />
