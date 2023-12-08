@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
-import AppPage from './pages/app/AppPage';
 import TemplatePage from './pages/template/TemplatePage';
 import Error404Page from './pages/error404/Error404Page';
 import CalendarPage from './pages/calendar/CalendarPage';
@@ -14,9 +13,9 @@ import CalendarPage from './pages/calendar/CalendarPage';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppPage />,
+    element: <CalendarPage />,
   },
-  
+
   {
     path: "/*",
     element: <Error404Page />
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
   (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ?
     {
       path: "/template",
-      element: <TemplatePage  />
+      element: <TemplatePage />
     } : {}
 ]);
 
