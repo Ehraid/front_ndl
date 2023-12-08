@@ -1,0 +1,9 @@
+.AudioPlayer {
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	min-width: 20rem;
+	width: 33%;
+}

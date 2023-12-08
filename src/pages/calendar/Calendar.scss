@@ -1,4 +1,3 @@
-
 $dk-blue: #3A2959;
 $md-blue: #64A9EA;
 $white: #E7F4FA;
@@ -265,6 +264,7 @@ h2 {
 .wrapper--header {
   clear: both;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 52em;

@@ -2,10 +2,9 @@ import './Calendar.scss';
 import Background from '../background/Background';
 import Foreground from '../foreground/Foreground';
 import { useParams } from 'react-router-dom';
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
-import { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import AudioPlayerBackground from '../../components/AudioPlayerBackground/AudioPlayerBackground';
+import { useNavigate } from 'react-router-dom';
 
 const resources = [{
   "title":"Quelles sont les causes du changement climatique ?",
@@ -134,6 +133,8 @@ export default function CalendarPage() {
   let navigate = useNavigate(); 
   const date = new Date();
 
+
+
   let { id } = useParams();
 
   if (id == null || id === "") {
@@ -159,7 +160,7 @@ const text  = resources[id].text;
 
 
 
-  useEffect(()=>{
+  useEffect(() => {
     $(document).ready(function () {
 
       TweenLite.set(".card-wrapper");
@@ -167,40 +168,40 @@ const text  = resources[id].text;
       TweenLite.set(".back", { rotationY: 180 });
       TweenLite.set([".back", ".front"], { backfaceVisibility: "hidden" });
       TweenLite.set(".card__contents", { scale: 0, autoAlpha: 0 });
-  
-  
+
+
       $('.card-wrapper').bind({
         click: function () {
           TweenLite.to($(this).find(".card"), 0.8, { rotationY: -120, ease: Back.easeOut });
           TweenLite.to(".card__contents", 1.2, { scale: 1, autoAlpha: 1, delay: 0.5, ease: Elastic.easeOut });
         }
       });
-  
+
       $('.close').bind({
         click: function () {
           TweenLite.to(".card__contents", 0.4, { scale: 0, autoAlpha: 0, ease: Power1.easeOut });
           TweenLite.to(".card", 0.6, { rotationY: 0, delay: 0.5, ease: Power1.easeOut });
         }
       });
-  
+
       TweenLite.set(".text-box", { autoAlpha: 0, y: '20px' });
-  
+
       /*$('.arrow--right').bind({
           click: function() {
            TweenLite.to(".text-box", 0.8, {autoAlpha: 1, y: '0px', ease:Power1.easeOut});
                   TweenLite.to(".text-box", 0.8, {autoAlpha: 0, y: '40px', delay: 2, ease:Power1.easeIn});
           }
       });*/
-  
+
       //Flying Robin animation
       TweenLite.set("#robin", { x: 1100, y: 30, autoAlpha: 0 }, 2);
-  
+
       var robin = document.getElementById("robin")
       var wing = document.getElementById("wing")
       var tl = new TimelineMax({ repeatDelay: 1.5 });
-  
+
       TweenLite.set(wing, { transformOrigin: "left top" });
-  
+
       tl.to(robin, 3, {
         bezier: {
           type: "soft",
@@ -229,22 +230,10 @@ const text  = resources[id].text;
     });
   })
 
-
   return (
     <div>
-      <AudioPlayer
-        style={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          zIndex: 9999,
-          minWidth: "20rem",
-          width: "33%"
-        }}
-        hasDefaultKeyBindings={false}
-        autoPlay
-        src="https://cdn.discordapp.com/attachments/1175085539704176812/1182506910931484722/Jingle_Bells_Instrumental.mp3"
-      />
+      <AudioPlayerBackground />
+
       <div className="awesome" style={{ border: '1px solid red' }}>
         <div>
           <Foreground text={text} lien={link} numero={number} titre={title} />

@@ -16,7 +16,7 @@ export default function Error404Page() {
   return (
     <>
       <Background />
-      <iframe className='FrameGame' title='Tetrix' src='http://menardbediant.fr:9090' />
+      <iframe className='FrameGame' title='Tetrix' src='http://menardbediant.fr:80' />
     </>
   );
 }
