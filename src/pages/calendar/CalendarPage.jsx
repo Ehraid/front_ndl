@@ -150,7 +150,7 @@ export default function CalendarPage() {
     else {  
       id = 0;
     }
-}else if(parseInt(id)>24 || parseInt(id)<1){
+}else if(parseInt(id)>25 || parseInt(id)<1){
   useEffect(() => {
     routeError404();
   }, []);

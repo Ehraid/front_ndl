@@ -52,6 +52,58 @@ export default function Foreground(props: ForegroundProps) {
   });
   return (
     <div className="foreground">
+      <div className="illustration">
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      </div>
       <header className="wrapper wrapper--header">
         <h1>L'Éco Calendrier</h1>
         <h2> 24 faits surprenants sur le climat</h2>
@@ -94,7 +146,7 @@ export default function Foreground(props: ForegroundProps) {
                     </div>
                   </div>
                 </div>
-                { currentNumero < 24 ? <div className="arrow arrow--right" onClick={routeChangeRight}>
+                { currentNumero < 25 ? <div className="arrow arrow--right" onClick={routeChangeRight}>
                 <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 90 90" xmlSpace="preserve">
                     <path className="arrow-2" d="M45 0C20.1 0 0 20.1 0 45c0 24.9 20.1 45 45 45s45-20.1 45-45C90 20.1 69.9 0 45 0zM46.9 71.5l-6-5.3L56.4 49H19.7v-8h36.7L41 23.8l6-5.3L70.7 45 46.9 71.5z" />
                   </svg>
