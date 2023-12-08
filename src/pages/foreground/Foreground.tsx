@@ -1,6 +1,7 @@
 import './Foreground.scss';
 import '../calendar/Calendar.scss';
 import {  useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 export interface ForegroundProps {
@@ -24,11 +25,34 @@ export default function Foreground(props : ForegroundProps) {
     let path = `/calendar/${currentNumero +1 }`; 
     navigate(path);
   }
+
+  const handleKeyPress = (event : any) => {
+    if(event.key === 'ArrowLeft'){
+      let path = `/calendar/${currentNumero -1 }`; 
+      navigate(path);
+    }
+    if(event.key === 'ArrowRight'){
+      let path = `/calendar/${currentNumero +1 }`; 
+      navigate(path);
+    }
+    if(event.key === 'Escape'){
+      let path = `/calendar/${currentNumero}`; 
+      navigate(path);
+    }
+  }
+  
+  useEffect(() => {
+
+    document.addEventListener("keydown", handleKeyPress, false);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress, false);
+    };
+  });
   return (
-    <div className="foreground">
+    <div className="foreground" >
               <header className="wrapper wrapper--header">
                 <h1>L'Éco Calendrier</h1>
-                <h2> 24 faits surprenants sur le climat</h2>
+                <h2 className="sous-titre"> 24 faits surprenants sur le climat</h2>
               </header>
               <main className="wrapper--main">
                 {currentNumero > 1 ?
