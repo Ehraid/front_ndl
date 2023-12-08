@@ -2,6 +2,7 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { useState } from 'react';
 import LogoAudio from './LogoAudio';
+import "./AudioPlayerBackground.css"
 
 
 
@@ -15,15 +16,7 @@ export default function AudioPlayerBackground() {
 	}
 
 	return (
-		<div style={{
-			display: "flex",
-			position: "fixed",
-			bottom: 0,
-			left: 0,
-			zIndex: 9999,
-			minWidth: "20rem",
-			width: "33%"
-		}}>
+		<div className='AudioPlayer'>
 			{displayAudioPlayer ?
 				<>
 					<AudioPlayer
