@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './Error404Page.css';
+import Background from '../background/Background';
 
 
 export default function Error404Page() {
@@ -13,6 +14,9 @@ export default function Error404Page() {
   }, [])
 
   return (
-    <iframe className='FrameGame' title='Tetrix' src='http://menardbediant.fr:9090' />
+    <>
+      <Background />
+      <iframe className='FrameGame' title='Tetrix' src='http://menardbediant.fr:9090' />
+    </>
   );
 }
