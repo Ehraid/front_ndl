@@ -8,6 +8,7 @@ import './index.css';
 import AppPage from './pages/app/AppPage';
 import TemplatePage from './pages/template/TemplatePage';
 import Error404Page from './pages/error404/Error404Page';
+import CalendarPage from './pages/calendar/CalendarPage';
 
 
 const router = createBrowserRouter([
@@ -19,7 +20,10 @@ const router = createBrowserRouter([
     path: "/*",
     element: <Error404Page />
   },
-
+  {
+    path: "/calendar",
+    element: <CalendarPage />
+  },
 
   //if we are debuging
   (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ?
