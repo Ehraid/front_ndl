@@ -15,8 +15,13 @@ const router = createBrowserRouter([
     path: "/",
     element: <AppPage />,
   },
+  
   {
     path: "/calendar",
+    element: <CalendarPage />
+  },
+  {
+    path: "/calendar/:id",
     element: <CalendarPage />
   },
 
@@ -24,7 +29,7 @@ const router = createBrowserRouter([
   (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ?
     {
       path: "/template",
-      element: <TemplatePage />
+      element: <TemplatePage  />
     } : {}
 ]);
 

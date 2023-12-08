@@ -2,8 +2,50 @@ import './Calendar.scss';
 import Background from '../background/Background';
 import Foreground from '../foreground/Foreground';
 import Helmet from "react-helmet";
+import { useParams } from 'react-router-dom';
 
-export default function TemplatePage() {
+const resources = [{
+  "titre":"Quelles sont les causes du changement climatique ?",
+  "text":"<p>Les combustibles fossiles, à savoir le charbon, le pétrole et le gaz, sont de loin les plus grands contributeurs au changement climatique mondial.</p><br/><p> ils sont responsables de plus de 75 % des émissions mondiales de gaz à effet de serre et de près de 90 % de toutes les émissions de dioxyde de carbone.</p><br/>",
+  "numero":"1",
+  "lien":"https://www.un.org/fr/climatechange/science/causes-effects-climate-change"
+  
+  },{
+  "titre":"Quelles sont les conséquences du changement climatique ?",
+  "text":"<p>Le changement climatique a des conséquences très graves sur la vie des êtres humains et des animaux. Il provoque des sécheresses, des inondations, des tempêtes, des incendies de forêt et des vagues de chaleur. Ces événements météorologiques extrêmes ont des conséquences sur la santé, l’agriculture, l’approvisionnement en eau, l’assainissement et l’hygiène, l’énergie et les écosystèmes.</p><br/>",
+  "numero":"2",
+  "lien":"https://www.un.org/fr/climatechange/science/causes-effects-climate-change"
+  
+  },{
+  "titre":"Quelles sont les solutions pour lutter contre le changement climatique ?",
+  "text":"<p>Il existe de nombreuses solutions pour lutter contre le changement climatique. Les énergies renouvelables, comme l’énergie solaire et l’énergie éolienne, sont des sources d’énergie propres qui ne produisent pas de gaz à effet de serre. Les voitures électriques sont une autre solution. Elles fonctionnent à l’électricité et non à l’essence, ce qui signifie qu’elles ne produisent pas de gaz à effet de serre.</p><br/>",
+  "numero":"3",
+  "lien":"https://www.un.org/fr/actnow/ten-actions#unplug"
+  
+  },{
+      "titre":"Netflix et le changement climatique",
+      "text":"saviez-vous que Netflix représentait quasiment 20% du trafic internet français en 2022 (oui oui 20% !) ?<br/>",
+      "numero":"4",
+      "lien":"https://www.radiofrance.fr/franceinter/netflix-represente-quasi-20-du-trafic-internet-francais-en-2022-2791360"
+  }];
+
+export default function CalendarPage() {
+
+ let {id} = useParams();
+
+if(id==null){
+  id = 0;
+}else{
+  id = parseInt(id)-1;
+
+}
+const titre = resources[id].titre;
+const numero = resources[id].numero;
+const lien = resources[id].lien;
+const text  = resources[id].text;
+
+
+
   $(document).ready(function(){
 
     TweenLite.set(".card-wrapper");
@@ -92,7 +134,7 @@ export default function TemplatePage() {
         {/* Hello world */}
         <div className="awesome" style={{border: '1px solid red'}}>
           <div>
-            <Foreground />
+            <Foreground text={text} lien={lien} numero={numero} titre={titre} />
             <Background />
           </div>  <label htmlFor="name">Enter your name: </label>
           <input type="text" id="name" />

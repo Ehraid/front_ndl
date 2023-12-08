@@ -2,7 +2,15 @@ import './Foreground.scss';
 import '../calendar/Calendar.scss';
 
 
-export default function Foreground() {
+export interface ForegroundProps {
+  titre: string;
+  text: string;
+  lien: string;
+  numero: number;
+}
+
+
+export default function Foreground(props : ForegroundProps) {
   return (
     <div className="foreground">
               <header className="wrapper wrapper--header">
@@ -21,21 +29,18 @@ export default function Foreground() {
                     <div className="card-under" />
                     <div className="card">
                       <div className="card-face front">
-                        <h1 className="number">22</h1>
+                        <h1 className="number">{props.numero}</h1>
                       </div>
                       <div className="card-face back" />
                     </div>
                   </a>
                   <div className="card__contents">
                     <div className="contents__wrapper">
-                      <h3>Quelles sont les causes du changement climatique ?</h3>
-                      <p>
-
-Les combustibles fossiles, à savoir le charbon, le pétrole et le gaz, sont de loin les plus grands contributeurs au changement climatique mondial.</p><br/><p> ils sont responsables de plus de 75 % des émissions mondiales de gaz à effet de serre et de près de 90 % de toutes les émissions de dioxyde de carbone.</p><br/>
-
+                      <h3>{props.titre}</h3>
+                      <p>{props.text}</p>
 
                       
-                      <a className="article__link" href="https://www.un.org/fr/climatechange/science/causes-effects-climate-change" target="_blank">Lire
+                      <a className="article__link" href={props.lien} target="_blank">Lire
                         l'article</a>
                       <a className="close">x</a>
                       <svg id="holly" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 210.5 169.3" xmlSpace="preserve">
