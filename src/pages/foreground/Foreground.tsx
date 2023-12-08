@@ -1,5 +1,6 @@
 import './Foreground.scss';
 import '../calendar/Calendar.scss';
+import { Link, Navigate } from 'react-router-dom';
 
 
 export interface ForegroundProps {
@@ -18,12 +19,16 @@ export default function Foreground(props : ForegroundProps) {
                 <h2> 24 Faits Surprenants sur le climat</h2>
               </header>
               <main className="wrapper--main">
-                <a className="arrow arrow--left" href="https://codepen.io/michellebarker/full/obLLJv/" target="_blank">
-                  <svg className="arrow-left" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 90 90" xmlSpace="preserve">
+                <Link to={`/calendar/${parseInt(props.numero as any)+1}`} className="arrow arrow--left"/>
+                
+
+                
+                <svg className="arrow-left" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 90 90" xmlSpace="preserve">
                     <style type="text/css" dangerouslySetInnerHTML={{__html: "\n                    " }} />
                     <path className="arrow-1" d="M0 45c0 24.9 20.1 45 45 45s45-20.1 45-45C90 20.1 69.9 0 45 0S0 20.1 0 45zM19.3 45l23.8-26.5 6 5.3L33.6 41h37v8h-37L49 66.2l-6 5.3L19.3 45z" />
                   </svg>
-                </a>
+                
+                
                 <div className="main">
                   <a className="card-wrapper">
                     <div className="card-under" />
@@ -37,7 +42,7 @@ export default function Foreground(props : ForegroundProps) {
                   <div className="card__contents">
                     <div className="contents__wrapper">
                       <h3>{props.titre}</h3>
-                      <p>{props.text}</p>
+                      <p dangerouslySetInnerHTML={{__html:props.text}}></p>
 
                       
                       <a className="article__link" href={props.lien} target="_blank">Lire
