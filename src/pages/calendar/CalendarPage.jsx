@@ -2,9 +2,9 @@ import './Calendar.scss';
 import Background from '../background/Background';
 import Foreground from '../foreground/Foreground';
 import { useParams } from 'react-router-dom';
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+
 import { useEffect, useState } from 'react';
+import AudioPlayerBackground from '../../components/AudioPlayerBackground/AudioPlayerBackground';
 
 const resources = [{
   "titre": "Quelles sont les causes du changement climatique ?",
@@ -126,42 +126,12 @@ export default function CalendarPage() {
 
 
 
-  const [displayAudioPlayer, setDisplayAudioPlayer] = useState(true);
 
-  function toggleDisplayAudioPlayer() {
-    setDisplayAudioPlayer(!displayAudioPlayer);
-  }
 
 
   return (
     <div>
-      <div style={{
-        display: "flex",
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        zIndex: 9999,
-        minWidth: "20rem",
-        width: "33%"
-      }}>
-        {displayAudioPlayer ?
-          <>
-            <AudioPlayer
-
-              hasDefaultKeyBindings={false}
-              autoPlay
-              src="https://cdn.discordapp.com/attachments/1175085539704176812/1182506910931484722/Jingle_Bells_Instrumental.mp3"
-            />
-            <button onClick={toggleDisplayAudioPlayer}>{"<<"}</button>
-          </>
-          :
-          <button onClick={toggleDisplayAudioPlayer}
-          style={{
-            minHeight:"4rem"
-          }}
-          >{">>"}</button>
-        }
-      </div>
+      <AudioPlayerBackground />
 
       <div className="awesome" style={{ border: '1px solid red' }}>
         <div>
