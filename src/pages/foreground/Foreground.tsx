@@ -27,8 +27,8 @@ export default function Foreground(props : ForegroundProps) {
   return (
     <div className="foreground">
               <header className="wrapper wrapper--header">
-                <h1>L'éco calendrier</h1>
-                <h2> 24 Faits Surprenants sur le climat</h2>
+                <h1>L'Éco Calendrier</h1>
+                <h2> 24 faits surprenants sur le climat</h2>
               </header>
               <main className="wrapper--main">
                 {currentNumero > 1 ?
