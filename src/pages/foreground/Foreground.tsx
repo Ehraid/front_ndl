@@ -1,6 +1,6 @@
 import './Foreground.scss';
 import '../calendar/Calendar.scss';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 export interface ForegroundProps {
@@ -12,6 +12,18 @@ export interface ForegroundProps {
 
 
 export default function Foreground(props : ForegroundProps) {
+  let navigate = useNavigate(); 
+
+  let currentNumero = parseInt(props.numero as any);
+
+  const routeChangeLeft = () =>{ 
+    let path = `/calendar/${currentNumero -1 }`; 
+    navigate(path);
+  }
+  const routeChangeRight = () =>{ 
+    let path = `/calendar/${currentNumero +1 }`; 
+    navigate(path);
+  }
   return (
     <div className="foreground">
               <header className="wrapper wrapper--header">
@@ -19,16 +31,14 @@ export default function Foreground(props : ForegroundProps) {
                 <h2> 24 Faits Surprenants sur le climat</h2>
               </header>
               <main className="wrapper--main">
-                <Link to={`/calendar/${parseInt(props.numero as any)+1}`} className="arrow arrow--left"/>
-                
-
-                
+                {currentNumero > 1 ?
+                <div className="arrow arrow--left" onClick={routeChangeLeft}>
                 <svg className="arrow-left" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 90 90" xmlSpace="preserve">
                     <style type="text/css" dangerouslySetInnerHTML={{__html: "\n                    " }} />
                     <path className="arrow-1" d="M0 45c0 24.9 20.1 45 45 45s45-20.1 45-45C90 20.1 69.9 0 45 0S0 20.1 0 45zM19.3 45l23.8-26.5 6 5.3L33.6 41h37v8h-37L49 66.2l-6 5.3L19.3 45z" />
                   </svg>
-                
-                
+                </div> : <div></div>}
+               
                 <div className="main">
                   <a className="card-wrapper">
                     <div className="card-under" />
@@ -58,11 +68,13 @@ export default function Foreground(props : ForegroundProps) {
                     </div>
                   </div>
                 </div>
-                <a className="arrow arrow--right" href="https://codepen.io/michellebarker/full/xZOLaZ/" target="_blank">
-                  <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 90 90" xmlSpace="preserve">
+                { currentNumero < 24 ? <div className="arrow arrow--right" onClick={routeChangeRight}>
+                <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 90 90" xmlSpace="preserve">
                     <path className="arrow-2" d="M45 0C20.1 0 0 20.1 0 45c0 24.9 20.1 45 45 45s45-20.1 45-45C90 20.1 69.9 0 45 0zM46.9 71.5l-6-5.3L56.4 49H19.7v-8h36.7L41 23.8l6-5.3L70.7 45 46.9 71.5z" />
                   </svg>
-                </a>
+                </div> : <div></div>}
+                
+               
               </main>
               <div className="text-box">
                 <p>Sorry, no peeking before tomorrow!</p>
