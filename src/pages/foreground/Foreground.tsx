@@ -7,7 +7,7 @@ export default function Foreground() {
     <div className="foreground">
               <header className="wrapper wrapper--header">
                 <h1>L'éco calendrier</h1>
-                <h2> 24 Faits Surprenants sur le climat"</h2>
+                <h2> 24 Faits Surprenants sur le climat</h2>
               </header>
               <main className="wrapper--main">
                 <a className="arrow arrow--left" href="https://codepen.io/michellebarker/full/obLLJv/" target="_blank">
@@ -28,18 +28,15 @@ export default function Foreground() {
                   </a>
                   <div className="card__contents">
                     <div className="contents__wrapper">
-                      <h3>Pricing</h3>
-                      <p>How much should you charge for your work? It’s a question that often needs revisiting. So
-                        many
-                        factors can influence what you should charge a client, such as your level of experience, the
-                        scope of the project and the urgency of the deadline.</p>
-                      <p>This article by Dan Mall is specifically aimed at design students – but it’s probably worth
-                        any
-                        designer or developer’s time to have a read and make sure you and your clients are getting
-                        value
-                        for money!</p>
-                      <a className="article__link" href="http://danielmall.com/articles/pricing/" target="_blank">Read the
-                        article</a>
+                      <h3>Quelles sont les causes du changement climatique ?</h3>
+                      <p>
+
+Les combustibles fossiles, à savoir le charbon, le pétrole et le gaz, sont de loin les plus grands contributeurs au changement climatique mondial.</p><br/><p> ils sont responsables de plus de 75 % des émissions mondiales de gaz à effet de serre et de près de 90 % de toutes les émissions de dioxyde de carbone.</p><br/>
+
+
+                      
+                      <a className="article__link" href="https://www.un.org/fr/climatechange/science/causes-effects-climate-change" target="_blank">Lire
+                        l'article</a>
                       <a className="close">x</a>
                       <svg id="holly" xmlns="http://www.w3.org/2000/svg" version="1.1" x={0} y={0} viewBox="0 0 210.5 169.3" xmlSpace="preserve">
                         <style type="text/css" dangerouslySetInnerHTML={{__html: "\n                                .leaf {\n                                    fill: #004136;\n                                }\n\n                                .berry1 {\n                                    fill: #B22B5C;\n                                }\n\n                                .berry2 {\n                                    fill: #CC2F60;\n                                }\n\n                                .berry3 {\n                                    fill: #E73362;\n                                }\n                            " }} />
