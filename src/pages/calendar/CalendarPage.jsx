@@ -126,6 +126,12 @@ const resources = [{
   "text":"En 2020, les transports sont responsables de 28,7 % des émissions nationales de GES, une contribution relativement moins forte qu'en 2019 où ils en représentaient 31,1 %. Cela montre cependant l'urgente nécésité de réduire ses déplacements.s",
   "number":24,
   "link":"https://www.statistiques.developpement-durable.gouv.fr/edition-numerique/chiffres-cles-transports-2022/19-emissions-de-gaz-a-effet#:~:text=Part%20des%20secteurs%20dans%20les%20%C3%A9missions%20de%20gaz%20%C3%A0%20effet%20de%20serre&text=En%202020%2C%20les%20transports%20sont,en%20repr%C3%A9sentaient%2031%2C1%20%25."
+  },
+  {
+    "title":"Félicitations pour avoir fini le calendrier ! 🎉",
+    "text":"<p>Bravo, vous avez terminé le calendrier de l'avent ! Nous espérons que vous avez appris des choses et que vous avez pris conscience de l'urgence climatique. N'hésitez pas à partager ce calendrier autour de vous pour sensibiliser vos proches ! N'oubliez pas qu'un impact, même à votre échelle peut faire la différence ! </p><br/>",
+    "number":25,
+    "link":""
 }];
 
 
@@ -138,7 +144,7 @@ export default function CalendarPage() {
   let { id } = useParams();
 
   if (id == null || id === "") {
-    if (date.getMonth() === 11 && date.getDate() < 25) {
+    if (date.getMonth() === 11 && date.getDate() < 26) {
       id = date.getDate() - 1;
     }
     else {  
