@@ -26,6 +26,16 @@ export default function Foreground(props : ForegroundProps) {
     navigate(path);
   }
 
+  function eventFire(el:any , etype:any){
+    if (el.fireEvent) {
+      el.fireEvent('on' + etype);
+    } else {
+      var evObj = document.createEvent('Events');
+      evObj.initEvent(etype, true, false);
+      el.dispatchEvent(evObj);
+    }
+  }
+
   const handleKeyPress = (event : any) => {
     if(event.key === 'ArrowLeft'){
       let path = `/calendar/${currentNumero -1 }`; 
@@ -36,8 +46,9 @@ export default function Foreground(props : ForegroundProps) {
       navigate(path);
     }
     if(event.key === 'Escape'){
-      let path = `/calendar/${currentNumero}`; 
-      navigate(path);
+      // let element  = document.querySelector(".close")
+      eventFire(document.querySelector(".close"), 'click');
+      
     }
   }
   
