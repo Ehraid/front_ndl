@@ -3,6 +3,8 @@ import Background from '../background/Background';
 import Foreground from '../foreground/Foreground';
 import Helmet from "react-helmet";
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const resources = [{
   "titre":"Quelles sont les causes du changement climatique ?",
@@ -33,12 +35,28 @@ export default function CalendarPage() {
 
  let {id} = useParams();
 
-if(id==null){
-  id = 0;
-}else{
-  id = parseInt(id)-1;
+ let navigate = useNavigate(); 
 
+  
+
+  const routeError404 = () =>{ 
+    let path = `/404`; 
+    navigate(path);
+  }
+
+if(id==null || id === ""){
+  id = 0;
+}else if(parseInt(id)>24 || parseInt(id)<1){
+  useEffect(() => {
+    routeError404();
+  }, []);
+  
 }
+else{
+  id = parseInt(id)-1;
+}
+
+
 const titre = resources[id].titre;
 const numero = resources[id].numero;
 const lien = resources[id].lien;
