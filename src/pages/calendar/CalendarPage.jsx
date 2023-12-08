@@ -132,7 +132,8 @@ export default function CalendarPage() {
 
  let {id} = useParams();
 
- let navigate = useNavigate(); 
+  let navigate = useNavigate(); 
+  const date = new Date();
 
   
 
@@ -141,8 +142,13 @@ export default function CalendarPage() {
     navigate(path);
   }
 
-if(id==null || id === ""){
-  id = 0;
+  if (id == null || id === "") {
+    if (date.getMonth() === 11 && date.getDate() < 25) {
+      id = date.getDate() - 1;
+    }
+    else {  
+      id = 0;
+    }
 }else if(parseInt(id)>24 || parseInt(id)<1){
   useEffect(() => {
     routeError404();
